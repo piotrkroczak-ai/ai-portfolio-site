@@ -1,0 +1,79 @@
+{
+  "profile": {
+    "name": "Piotr Kroczak",
+    "headline": "AI & Data Science | Agentic Workflow Design | Data Automation",
+    "location": "Poznan, Poland",
+    "summary": "Piotr combines a marketing and growth background with data science, statistics, and AI automation to deliver practical, measurable outcomes."
+  },
+  "professionalBackground": [
+    "Built a multi-year career in digital marketing, SEO strategy, and content operations across travel, media, and technology contexts.",
+    "Transitioned toward data science and AI to move from intuition-based decisions to evidence-driven analysis and decision support.",
+    "Works at the intersection of business context and technical execution, translating complex topics into practical action."
+  ],
+  "mainTechnicalSkills": [
+    "Python for data analysis and workflow automation",
+    "Statistics, hypothesis-driven analysis, and interpretation of outcomes",
+    "Machine learning foundations and applied experimentation",
+    "SEO analytics and NLP-oriented content evaluation",
+    "Agentic workflow design and AI-assisted process automation",
+    "Dashboard-oriented performance monitoring and KPI analysis"
+  ],
+  "projects": [
+    {
+      "name": "AI-Assisted Operations Workflows",
+      "description": "Designing tools for technical support and recruitment workflows to improve information retrieval and evaluation quality."
+    },
+    {
+      "name": "Multilingual Data Automation Pipeline",
+      "description": "Building internal systems for scraping, processing, and distributing multilingual datasets using automated pipelines."
+    },
+    {
+      "name": "SEO Analytics Agent",
+      "description": "Developing KPI-driven analytics support for content quality, readability, keyword strategy, and NLP-informed optimization."
+    },
+    {
+      "name": "Dataset Cleaning and Structuring Assistant",
+      "description": "Creating automation for preprocessing and structuring data before deeper analysis."
+    }
+  ],
+  "careerJourney": [
+    {
+      "period": "2022 - Present",
+      "role": "AI & Data Science, Automation Workflows",
+      "organization": "InsightX Labs"
+    },
+    {
+      "period": "2013 - 2025",
+      "role": "Digital Marketing and SEO Consultant",
+      "organization": "ContentCraft"
+    },
+    {
+      "period": "2011 - 2025",
+      "role": "Travel Content Creator",
+      "organization": "Bien Voyager"
+    },
+    {
+      "period": "2021 - 2024",
+      "role": "Web3 Community and Social Leadership",
+      "organization": "Multiple Projects"
+    }
+  ],
+  "howPiotrHelpsCompanies": [
+    "Connects strategy and execution to improve data-informed decision making.",
+    "Designs automation that reduces repetitive work and improves operational consistency.",
+    "Applies analytical methods to identify performance drivers and optimization opportunities.",
+    "Bridges communication between technical and non-technical stakeholders."
+  ],
+  "portfolioRoadmap": [
+    "AI automation case studies",
+    "Data science notebooks and experiments",
+    "Consulting impact stories tied to measurable outcomes"
+  ],
+  "publicLinks": {
+    "linkedin": "https://www.linkedin.com/in/piotrkroczak",
+    "github": "https://github.com/piotrkroczak-ai",
+    "travelWebsite": "https://www.bien-voyager.com",
+    "outdoorWebsite": "https://www.1001-pas.fr",
+    "contactPage": "/contact"
+  }
+}

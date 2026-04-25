@@ -1,5 +1,6 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
+import VirtualMeChat from "@/app/components/VirtualMeChat";
 
 type CareerStep = {
   period: string;
@@ -148,6 +149,9 @@ export default function Home() {
             </li>
             <li>
               <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a href="#virtual-piotr">Virtual Piotr</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -304,6 +308,14 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="panel reveal reveal-delay-3" id="virtual-piotr">
+        <div className="section-head">
+          <p>AI Assistant</p>
+          <h2>Chat with Virtual Piotr.</h2>
+        </div>
+        <VirtualMeChat />
       </section>
 
       <section className="contact-strip reveal reveal-delay-3" id="contact">
