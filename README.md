@@ -79,11 +79,13 @@ Main objectives:
     ├── AGENTS.md
     ├── CLAUDE.md
     └── README.md
+```
 
 ## Run
 
-    From the project folder:
+From the project folder:
 
-    ```bash
-    npm install
-    npm run dev
+```bash
+npm install
+npm run dev
+```
