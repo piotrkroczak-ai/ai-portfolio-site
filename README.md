@@ -31,14 +31,6 @@ Main objectives:
 - Check how well the model handles corrections and iterations
 - Create a AI digital twin with AI router key
 
-## Run
-
-From the project folder:
-
-```bash
-npm install
-npm run dev
-
 ## Tech Stack
 
 - Next.js
@@ -87,3 +79,11 @@ npm run dev
     ├── AGENTS.md
     ├── CLAUDE.md
     └── README.md
+
+## Run
+
+    From the project folder:
+
+    ```bash
+    npm install
+    npm run dev
