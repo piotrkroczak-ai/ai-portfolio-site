@@ -174,3 +174,23 @@ SMTP_TO_EMAIL=recipient@example.com
 
 Never commit `.env.local`. Use platform secrets (Vercel, AWS, etc.) for production.
 
+---
+
+## Optional Assets
+
+Two optional files can be stored in `website/`:
+
+### `picture.png`
+- Professional headshot photo (JPEG or PNG)
+- Used in future UI enhancements
+- Not currently integrated; prepare for future use
+- **Not in git** (add to `.gitignore`)
+
+### `profile.pdf`
+- LinkedIn profile export (PDF)
+- Can be referenced for additional CV/resume context
+- Never directly exposed to users via chat or public routes
+- **Not in git** (add to `.gitignore`)
+
+Both files are security-protected: they exist locally for reference but are never served to the web or exposed through API endpoints.
+
