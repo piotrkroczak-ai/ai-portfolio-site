@@ -26,9 +26,10 @@ We built a local professional website with:
 
 ### Framework and Language
 
-- **Next.js (App Router)**: full-stack React framework (frontend + backend routes)
-- **React**: component-based UI
-- **TypeScript**: JavaScript with type safety
+- **Next.js 16.2.4 (App Router)**: full-stack React framework (frontend + backend routes)
+  - ⚠️ **Note**: This is a recent version with breaking changes; see `AGENTS.md` for compatibility notes
+- **React 19.2.4**: component-based UI
+- **TypeScript 5**: JavaScript with type safety
 
 ### Styling
 
@@ -191,7 +192,7 @@ The backend validates:
 
 ### 4) Email sending
 
-If valid and SMTP is configured, it sends to `kroczak.piotr@gmail.com` with Nodemailer.
+If valid and SMTP is configured, it sends to `User Email` with Nodemailer.
 
 ---
 
@@ -361,6 +362,8 @@ Key beginner takeaway:
 
 ## 6. How to Run Locally
 
+### Initial Setup
+
 From project root:
 
 ```bash
@@ -373,13 +376,105 @@ Then open:
 
 - `http://localhost:3000`
 
-Optional checks:
+### Environment Variables
+
+Create a `.env.local` file in the `website/` directory with:
+
+```env
+# Optional: For OpenRouter integration
+OPENROUTER_API_KEY=your-openrouter-key-here
+
+# Optional: For contact form email (SMTP)
+SM# Chat shows fallback instead of OpenRouter
+
+Possible causes:
+
+- `OPENROUTER_API_KEY` is not set or invalid
+- free-tier model rate-limited
+- temporary provider outage
+
+What happens in this project:
+
+- Chatbot gracefully returns safe answers from `public-profile.json` (`mode: local-mock`)
+- Users can still interact; they just won't get AI-refined responses
+
+### Contact form returns "SMTP not configured"
+
+This is expected if email settings aren't set up. The form will:
+
+- ✅ Validate input (required fields, email format, captcha)
+- ❌ Not send emails without SMTP settings
+- Log validation results to console
+
+**To enable emails**, add SMTP variables to `.env.local` (see Environment Variables section above).
+
+### Captcha validation fails
+
+Possible causes:
+
+- `CAPTCHA_SECRET` not set (using insecure default)
+- Secret changed between form generation and submission
+- Form data tampered with
+
+During development, the default secret is fine. **Before deploying**, generate a strong random secret:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+Then set it in `.env.localroduction)
+
+### Optional Checks
 
 ```bash
 npm run lint
 npm run build
 ```
+curity Checklist (Before Deployment)
 
+When deploying to production, ensure:
+
+- [ ] **Captcha Secret**: Generate a strong `CAPTCHA_SECRET` (see troubleshooting). Never use the default.
+- [ ] **OpenRouter API Key**: Keep `OPENROUTER_API_KEY` secret; never commit to git.
+- [ ] **SMTP Credentials**: Store SMTP password securely; use environment variables, never hardcode.
+- [ ] **Profile Data**: Verify `public-profile.json` contains only information you want public.
+- [ ] **Refusal Patterns**: Review the `PRIVATE_REQUEST_PATTERNS` in `/api/chat/route.ts` for edge cases.
+- [ ] **Rate Limiting**: Consider adding rate limiting to `/api/contact` and `/api/chat` endpoints.
+- [ ] **CORS/CSP**: Check `next.config.ts` and headers for security policies (especially if adding external APIs).
+- [ ] **Environment Variables**: Use a secrets manager (Vercel Environment Variables, AWS Secrets Manager, etc.) — never `.env.local` in production.
+
+**Example for Vercel deployment:**
+
+1. In Vercel Dashboard → Project Settings → Environment Variables
+2. Add each variable from `.env.local` as a secure environment variable
+3. Never expose `OPENROUTER_API_KEY`, `SMTP_PASSWORD`, or `CAPTCHA_SECRET`
+
+## 10. Project Metadata Files
+
+This project includes two configuration files for AI development:
+
+- **`CLAUDE.md`**: Currently just references `AGENTS.md` (placeholder for Claude-specific instructions)
+- **`AGENTS.md`**: Contains breaking change notice for Next.js 16.x — reminders that APIs and conventions may differ from training data
+
+These are hints for developers using AI tools to stay aware of version-specific quirks.
+
+---
+
+## 11. Next Steps
+
+If you want to extend this project, consider:
+
+1. **Part 2 Tutorial**: "How `/api/chat` works line by line" (diving into the safety policy engine)
+2. **Analytics Integration**: Add PostHog or Plausible for privacy-respecting usage tracking
+3. **Automated Tests**: Jest + React Testing Library for components and API routes
+4. **CI/CD Pipeline**: GitHub Actions to lint, test, and deploy on push
+5. **Database Integration**: Optional—store contact messages in a database instead of just emailing
+
+---
+
+---
+
+## 9. Se
 ---
 
 ## 7. Common Troubleshooting
