@@ -154,7 +154,7 @@ export default function Home() {
               <a href="#virtual-piotr">Virtual Piotr</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
