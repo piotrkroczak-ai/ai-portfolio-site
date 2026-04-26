@@ -29,7 +29,7 @@ export default function VirtualMeChat() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     createMessage(
       "assistant",
-      "Hi, I am Virtual Piotr. I only answer from Piotr's curated public profile data."
+      "Hi, I am Piotr's Digital Twin. I only answer from Piotr's curated public profile data."
     )
   ]);
   const [input, setInput] = useState("");
@@ -114,7 +114,7 @@ export default function VirtualMeChat() {
             className={`virtual-chat-message ${message.role}`}
           >
             <p className="virtual-chat-role">
-              {message.role === "assistant" ? "Virtual Piotr" : "You"}
+              {message.role === "assistant" ? "Digital Twin" : "You"}
             </p>
             <p>{message.content}</p>
           </article>
@@ -122,7 +122,7 @@ export default function VirtualMeChat() {
 
         {isLoading ? (
           <article className="virtual-chat-message assistant loading">
-            <p className="virtual-chat-role">Virtual Piotr</p>
+            <p className="virtual-chat-role">Digital Twin</p>
             <p>Thinking...</p>
           </article>
         ) : null}
@@ -130,7 +130,7 @@ export default function VirtualMeChat() {
 
       <form className="virtual-chat-form" onSubmit={handleSubmit}>
         <label htmlFor="virtual-me-input" className="sr-only">
-          Ask Virtual Piotr
+          Ask Piotr&apos;s Digital Twin
         </label>
         <input
           id="virtual-me-input"

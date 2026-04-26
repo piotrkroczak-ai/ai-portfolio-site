@@ -151,7 +151,7 @@ export default function Home() {
               <a href="#portfolio">Portfolio</a>
             </li>
             <li>
-              <a href="#virtual-piotr">Virtual Piotr</a>
+              <a href="#virtual-piotr">Digital Twin</a>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
@@ -313,7 +313,7 @@ export default function Home() {
       <section className="panel reveal reveal-delay-3" id="virtual-piotr">
         <div className="section-head">
           <p>AI Assistant</p>
-          <h2>Chat with Virtual Piotr.</h2>
+          <h2>Chat with Piotr&apos;s Digital Twin.</h2>
         </div>
         <VirtualMeChat />
       </section>
